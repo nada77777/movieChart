@@ -1,0 +1,72 @@
+.container {
+    background-color: aqua;
+    width: 50%;
+    padding: 12px;
+}
+
+.movie {
+    background-color: #adaeb9;
+    width: 100%;
+    display: flex;
+    padding: 0.5rem;
+    margin: 0 auto;
+    border-radius: 5px;
+    transition: all 1.2ms linear;
+    cursor: pointer;
+}
+
+.movie:hover {
+    transform: scale(1.02);
+}
+
+.title {
+    color: white;
+    font-size: 1.1rem;
+}
+
+.release {
+    font-size: 1rem;
+    color: #ccc;
+    padding: 0.5rem 0;
+}
+
+.average {
+    padding: 0.5rem 0 0 0;
+}
+
+.star__rating {
+    position: relative;
+    width: 100px;
+    height: 28px;
+    color: #c5c5c5;
+    font-size: 17px;
+    padding-bottom: 0.5rem;
+}
+
+.star__top,
+.star__bottom {
+    display: block;
+}
+
+.star__top{
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: gold;
+    z-index: 1;
+}
+
+
+img {
+    background-color: aqua;
+    max-width: 150px;
+    height: 230px;
+    margin-right: 0.5rem;
+}
+
+
+
+.desc {
+    white-space: pre-wrap;
+}
