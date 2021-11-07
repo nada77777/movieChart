@@ -1,72 +1,92 @@
 .container {
-    background-color: aqua;
-    width: 50%;
-    padding: 12px;
+  background-color: aqua;
+  display: flex;
+  flex: 1 20%;
+  margin: 15px 2%;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.25s ease-in-out;
+}
+
+.container:hover {
+  transform: scale(1.05);
 }
 
 .movie {
-    background-color: #adaeb9;
-    width: 100%;
-    display: flex;
-    padding: 0.5rem;
-    margin: 0 auto;
-    border-radius: 5px;
-    transition: all 1.2ms linear;
-    cursor: pointer;
+  position: relative;
+  background-color: #adaeb9;
+  color: black;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 }
 
-.movie:hover {
-    transform: scale(1.02);
+.movieInfo {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  padding: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: all 0.1s ease-in-out;
+}
+
+.movieInfo:hover {
+  background-color: rgba(10, 10, 10, 0.5);
 }
 
 .title {
-    color: white;
-    font-size: 1.1rem;
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
 }
 
 .release {
-    font-size: 1rem;
-    color: #ccc;
-    padding: 0.5rem 0;
-}
-
-.average {
-    padding: 0.5rem 0 0 0;
+  font-size: 1rem;
+  color: #ccc;
+  padding: 0.5rem 0;
 }
 
 .star__rating {
-    position: relative;
-    width: 100px;
-    height: 28px;
-    color: #c5c5c5;
-    font-size: 17px;
-    padding-bottom: 0.5rem;
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 28px;
+  color: #c5c5c5;
+  font-size: 17px;
+  padding-bottom: 0.5rem;
+}
+
+.average {
+  background-color: brown;
 }
 
 .star__top,
 .star__bottom {
-    display: block;
+  display: block;
+  left: 15%;
+  top: -3px;
 }
 
-.star__top{
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-    color: gold;
-    z-index: 1;
+.star__top {
+  position: absolute;
+  overflow: hidden;
+  color: gold;
+  z-index: 1;
 }
 
+.star__bottom {
+  position: absolute;
+}
 
 img {
-    background-color: aqua;
-    max-width: 150px;
-    height: 230px;
-    margin-right: 0.5rem;
+  background-color: aqua;
+  width: 100%;
+  height: 100%;
 }
 
-
-
 .desc {
-    white-space: pre-wrap;
+  white-space: pre-wrap;
 }
