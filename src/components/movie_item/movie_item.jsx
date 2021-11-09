@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './movie_item.module.css';
-const MovieItem = ({ movie }) => {
-
+const MovieItem = ({ movie, getMovieDetail }) => {
     const {
          id,
          backdrop_path,
@@ -11,28 +10,36 @@ const MovieItem = ({ movie }) => {
          release_date,
          vote_count,
          vote_average,
-         overview} = movie;
+         overview
+        } = movie;
+
+        const getInfo = () => {
+            getMovieDetail(id)
+        };
+    
     return(
         <li className={styles.container}>
           <Link to={{pathname: `/detail/${id}`,
-                     state:{
-                        id,
-                        backdrop_path,
-                        poster_path,
-                        original_title,
-                        release_date,
-                        vote_count,
-                        vote_average,
-                        overview
-                     }}}>
-            <div className={styles.movie}>
+                    //  state:{
+                    //     id,
+                    //     backdrop_path,
+                    //     poster_path,
+                    //     original_title,
+                    //     release_date,
+                    //     vote_count,
+                    //     vote_average,
+                    //     overview,
+                    //  }
+                     }} style={{ textDecoration: 'none' }}>
+            <div className={styles.movie} onClick={getInfo}>
                 <img alt="img" src={"https://image.tmdb.org/t/p/w500"+ poster_path.toString()}/>
                 <div className={styles.movieInfo}>
-                    <h1 className={styles.title}>{original_title}</h1>
+                    
                     <h2 className={styles.release}>개봉일 {release_date}</h2>
                     <p className={styles.vote}>투표 수 {vote_count}</p>
-                    <p className={styles.average}>평점</p>
+                    
                     <div className={styles.star__rating}>
+                        <div className={styles.average}>평점</div>
                         <div className={styles.star__top} style={{width: vote_average * 8.5}}>
                             <span className={styles.star}>★</span>
                             <span className={styles.star}>★</span>
@@ -48,7 +55,8 @@ const MovieItem = ({ movie }) => {
                             <span className={styles.star}>★</span>
                         </div>
                     </div>
-                    <pre className={styles.desc}>{(overview.slice(0,220))}...</pre>
+                    <h1 className={styles.title}>{original_title}</h1>
+                    {/* <pre className={styles.desc}>{(overview.slice(0,220))}...</pre> */}
                 </div>
             </div>
           </Link>

@@ -1,8 +1,13 @@
-*{
+* {
   box-sizing: border-box;
 }
 
-h1, h2, p, pre, ul, li {
+h1,
+h2,
+p,
+pre,
+ul,
+li {
   list-style: none;
   margin: 0;
   padding: 0;

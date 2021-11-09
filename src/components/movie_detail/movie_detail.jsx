@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './movie_detail.module.css';
-const MovieDetail = ({ location }) => {
+const MovieDetail = ({ movieInfo }) => {
    const {
     // backdrop_path,
     poster_path,
@@ -8,34 +8,40 @@ const MovieDetail = ({ location }) => {
     release_date,
     vote_count,
     vote_average,
+    budget,
+    runtime,
     overview
-   } = location.state;
+   } = movieInfo;
+console.log(movieInfo);
     return (
         <section className={styles.detail}>
             <div className={styles.movie}>
-                <img alt="img" src={"https://image.tmdb.org/t/p/w500"+ poster_path.toString()}/>
-                <div className={styles.movieInfo}>
-                    <h1 className={styles.title}>{original_title}</h1>
-                    <h2 className={styles.release}>개봉일 {release_date}</h2>
-                    <p className={styles.vote}>투표 수 {vote_count}</p>
-                    <p className={styles.average}>평점</p>
-                    <div className={styles.star__rating}>
-                        <div className={styles.star__top} style={{width: vote_average * 8.5}}>
-                            <span className={styles.star}>★</span>
-                            <span className={styles.star}>★</span>
-                            <span className={styles.star}>★</span>
-                            <span className={styles.star}>★</span>
-                            <span className={styles.star}>★</span>
+                <div className={styles.movie__poster}>
+                    <img alt="img" src={`'http://image.tmdb.org/t/p/w1280/'${poster_path}`}/>
+                </div>
+                <div className={styles.movie__info}>
+                    <h2 className={styles.title}>{original_title}</h2>
+                    <p className={styles.overview}>{overview.slice(0,111)}...</p>
+                    <div className={styles.movie__detail__info}>
+                        <div>
+                            <h4>Original Release</h4>
+                            <p>{release_date}</p>
                         </div>
-                        <div className={styles.star__bottom}>
-                            <span className={styles.star}>★</span>
-                            <span className={styles.star}>★</span>
-                            <span className={styles.star}>★</span>
-                            <span className={styles.star}>★</span>
-                            <span className={styles.star}>★</span>
+                        <div>
+                            <h4>Running Time</h4>
+                            <p>{runtime}</p>
                         </div>
+                        <div>
+                            <h4>Budget</h4>
+                            <p>{budget}</p>
+                        </div>
+                        <div>
+                            <h4>Running Time</h4>
+                            <p>{release_date}</p>
+                        </div>
+
                     </div>
-                    <pre className={styles.desc}>{(overview.slice(0,220))}...</pre>
+
                 </div>
             </div>
         </section>
